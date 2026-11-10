@@ -178,20 +178,21 @@
 <section class="summary" aria-labelledby="summary-title">
   <h2 id="summary-title">The short version</h2>
   <ul>
-    <li>The developer does not receive or store your documents, reading history, notes, questions or account data. There are no accounts, ads, analytics, tracking or crash-reporting SDKs.</li>
+    <li>The developer does not receive or store your documents, reading history, notes, questions or account data during normal app use. There are no accounts, ads, analytics, tracking or crash-reporting SDKs. If you choose to submit an AI answer report, the question/answer excerpt you submit is posted to a public GitHub issue (see sections 7 and 15).</li>
     <li>Documents and reading data are processed and stored on your device. Android cloud backup is disabled, so the system backup service does not upload MyReader’s reading state to Google Drive.</li>
-    <li>Network access is used only for optional, user-initiated features: selected-text translation through Google Translate, web references, and voice/translation/Reading AI model downloads.</li>
+    <li>App-initiated network access is used only for optional, user-initiated features: selected-text translation through Google Translate, web references, and voice/translation/Reading AI model downloads.</li>
     <li>Spoken-sentence translation is always processed on the device. It does not send sentences to Google Translate.</li>
     <li>Web references are off by default. When you turn them on, your question (and the book title for book-scoped questions) is sent to public search providers and Wikipedia. Book text, indexed passages, selected passages and notes are not sent.</li>
     <li>Optional AI and voice packs are large downloads. They are not bundled in the APK and are stored in the app’s private storage until you delete them.</li>
     <li>The Diagnostics log is local and is never uploaded automatically. You can share it only through Android’s chooser.</li>
   </ul>
   <div class="ko" lang="ko">
-    <strong>한국어 요약:</strong> 개발자는 문서·읽기 기록·노트를 수집하거나 보관하지 않습니다.
+    <strong>한국어 요약:</strong> 개발자는 일반적인 앱 사용에서 문서·읽기 기록·노트를 수집하거나 보관하지 않습니다.
     계정·광고·분석·트래킹은 없습니다. 문서와 읽기 데이터는 기기에 저장되며, Android 클라우드 백업은
     꺼져 있습니다. 네트워크는 선택 기능(Google 번역, 웹 참고, 모델 다운로드)에만 사용됩니다.
     낭독 문장 번역은 항상 기기에서 처리됩니다. 웹 참고는 기본 꺼짐이며, 켜면 질문과 책 제목만
-    검색 서비스로 전송되고 책 본문·색인·선택 구절·노트는 전송되지 않습니다.
+    검색 서비스로 전송되고 책 본문·색인·선택 구절·노트는 전송되지 않습니다. AI 답변을 신고하면
+    질문·답변 일부와 앱/Android 버전이 공개 GitHub 이슈로 전송됩니다.
   </div>
 </section>
 
@@ -237,8 +238,8 @@
 
 <section id="collection">
   <h2>3. What the developer collects</h2>
-  <p><strong>The developer does not receive or store personal data from MyReader.</strong> There is no account system, no developer server, no advertising SDK, no analytics SDK, no tracking SDK and no crash-reporting SDK. The developer does not sell or rent personal data.</p>
-  <p>MyReader does make some <strong>optional, user-initiated transmissions</strong> directly from your device to third-party services. Those are described in sections 4–6. Under Google Play’s Data safety rules, transmitting data off the device can count as “collection” or “sharing” even when the developer never receives it. This policy describes those transfers plainly rather than claiming that “nothing ever leaves the device.”</p>
+  <p><strong>During normal app use, the developer does not receive or store personal data from MyReader.</strong> There is no account system, no developer server, no advertising SDK, no analytics SDK, no tracking SDK and no crash-reporting SDK. The developer does not sell or rent personal data.</p>
+  <p>MyReader does make some <strong>optional, user-initiated transmissions</strong> directly from your device to third-party services, and it offers a user-initiated AI answer report that posts to a public GitHub issue. These are described in sections 4–7. Under Google Play’s Data safety rules, transmitting data off the device can count as “collection” or “sharing” even when the developer never operates a receiving server. This policy describes those transfers plainly rather than claiming that “nothing ever leaves the device.”</p>
   <p>The developer does not use your documents, notes or questions to train models. When you choose to send content to a third party (for example, selected text to Google Translate or a question to a search provider), that provider handles the content under its own terms and privacy policy.</p>
 </section>
 
@@ -252,6 +253,9 @@
   <p>Only the selected text is sent—not the whole document, the file, your reading history, your notes or your other documents. The app does not store the selection or the translation result beyond an in-memory translation cache. Google’s handling of the text inside the WebView is governed by <a href="https://policies.google.com/privacy" rel="noopener">Google’s privacy policy</a> and the applicable Google terms.</p>
   <p>The Google Translate WebView has JavaScript and local storage enabled. Google may store cookies or local storage in the WebView, subject to its own policy and your WebView settings. You can remove this data by clearing MyReader’s storage in Android Settings or by uninstalling the app.</p>
   <p>If you do not want this transfer, do not tap Google Translate. You can install the optional TranslateGemma pack to translate selected text locally, or copy the text and use a service you choose.</p>
+
+  <h3>Spoken-sentence translation (off by default)</h3>
+  <p>The separate <strong>Translate spoken sentences</strong> setting is off by default. When enabled, MyReader translates each sentence it reads aloud using only on-device processing: the optional TranslateGemma pack first, then the Android on-device translation service. If neither can handle the language pair, no translation is shown. <strong>This feature does not contact Google Translate and does not send spoken sentences over the network.</strong> The translated line is shown in a translucent subtitle on the reading screen, and the original sentence remains the reading/highlight anchor.</p>
 </section>
 
 <section id="web-references">
@@ -309,6 +313,7 @@
 
   <p>Public SearXNG instances are operated by independent third parties, not by the MyReader developer. Wikipedia, Yahoo and DuckDuckGo are separate services. Their own privacy policies apply to the queries they receive. MyReader filters some results (for example, YouTube links) and applies relevance checks, but it does not control third-party content or retention.</p>
   <p>Search results and extracted page text are cached in memory for the current app session only. The selected SearXNG base URL is stored in the app’s private preferences. Turning Web references off stops new requests; a request already in flight may finish. The app continues to use only the local index when web references are off.</p>
+  <p>Links embedded in documents open in your device’s browser (or the app you choose). Those visits are user-initiated and are governed by the browser/site policies, not by MyReader.</p>
 </section>
 
 <section id="downloads">
@@ -349,6 +354,9 @@
   </table>
 
   <p>After installation, voice synthesis, translation and Reading AI inference run on the device. Deleting a pack removes its files from private storage; deleting a pack does not delete your documents, bookmarks or highlights. An older translation pack (M2M-100) is no longer offered or used; if a previous installation is present, Voice settings shows a delete-only row.</p>
+
+  <h3>System text-to-speech</h3>
+  <p>Read-aloud can use the text-to-speech engine installed on your device. MyReader passes the text to that engine. Some engines can use network voices; in that case the selected text is handled by the engine and its provider under their own privacy policy. MyReader does not upload the text itself. Choosing an on-device voice, or installing the optional Supertonic/Chinese pack, avoids a network voice.</p>
   <p>Download hosts and their content-delivery providers may process standard request metadata under their own policies. See <a href="https://huggingface.co/privacy" rel="noopener">Hugging Face’s privacy policy</a> and <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub’s privacy statement</a>.</p>
 </section>
 
@@ -358,11 +366,12 @@
   <ul>
     <li>Book text is extracted, chunked and stored in a private SQLite index, together with vectors used for search. Extracted text and vectors stay in the app’s private storage.</li>
     <li>Questions, answers, summaries, explanations and chat are generated by the local model. No document text, index passage, note or chat message is sent to a developer server.</li>
-    <li>Saved notes may include a selected passage, an AI answer, a book title and a timestamp. Notes are stored locally. If you enable a note’s <strong>AI reference</strong> option, that note can be included as local context for your own AI questions; it is not sent to web search.</li>
+    <li>Saved notes may include a selected passage, an AI answer, a book title and a timestamp. Notes are stored locally. When the global <strong>Use notes as AI context</strong> switch is on, notes can be included as local context for your own AI questions; they are not sent to web search.</li>
     <li>Book chat and general chat keep a small local conversation memory so the thread survives leaving the screen. Long conversations are compacted locally.</li>
   </ul>
-  <p><strong>Deleting AI data:</strong> the in-app <strong>AI 데이터 삭제</strong> / <strong>Delete AI data</strong> action deletes the local search index database, saved AI notes, generated AI artifacts and the AI cache. It does <strong>not</strong> delete your bookmarks or highlights, and it does not delete installed model packs. Chat memory is stored separately from the index; use <strong>새 대화</strong> / <strong>New conversation</strong> to clear the current conversation, or clear MyReader’s storage/uninstall to remove all local chat memory.</p>
-  <p><strong>Accuracy:</strong> AI-generated answers can be incomplete, outdated or wrong. They are not professional advice. Check important facts against the original document. The app does not publish your AI output; sharing is only through Android’s share sheet when you choose it.</p>
+  <p><strong>Deleting AI data:</strong> the in-app <strong>AI 데이터 삭제</strong> / <strong>Delete AI data</strong> action deletes the local search index database, saved AI notes, generated AI artifacts, the AI cache and local chat memory. It does <strong>not</strong> delete your bookmarks or highlights, and it does not delete installed model packs.</p>
+  <p><strong>Accuracy:</strong> AI-generated answers can be incomplete, outdated or wrong. They are not professional advice. Check important facts against the original document. The app does not publish your AI output automatically; you can share it through Android’s share sheet or submit a public AI answer report when you choose.</p>
+  <p><strong>Sharing and AI reports:</strong> when you share a document, note or diagnostic log, Android opens the system chooser and sends the item only to the app you choose. If you tap <strong>Report / 신고</strong> on an AI answer, the app opens its public GitHub issue form inside an in-app WebView and sends the question, answer, optional comment, app version and Android version so the developer can review it. Reports are public; do not include personal information or whole documents. MyReader does not operate a separate sharing server.</p>
   <p><strong>Model licenses:</strong> Gemma 4 E2B is Apache-2.0; EmbeddingGemma and TranslateGemma are under the Gemma Terms of Use; Supertonic 3 is under BigScience OpenRAIL-M. The app’s About → open-source licenses and model-license dialogs contain the notices. Do not describe all models as “open source” without checking the specific license.</p>
 </section>
 
@@ -408,8 +417,8 @@
       <tr>
         <td>Chat memory</td>
         <td>App-private preferences</td>
-        <td>Until you start a new conversation, clear storage or uninstall</td>
-        <td><strong>새 대화</strong> / <strong>New conversation</strong> clears the current scope; clear storage/uninstall removes all.</td>
+        <td>Until you start a new conversation, delete AI data, clear storage or uninstall</td>
+        <td><strong>새 대화</strong> / <strong>New conversation</strong> clears the current scope; <strong>Delete AI data</strong>, clear storage or uninstall removes all.</td>
       </tr>
       <tr>
         <td>Model packs</td>
@@ -434,6 +443,12 @@
         <td>App WebView storage</td>
         <td>Until cleared</td>
         <td>Clear MyReader’s storage in Android Settings, or uninstall.</td>
+      </tr>
+      <tr>
+        <td>AI answer reports</td>
+        <td>Public GitHub issue</td>
+        <td>Until you or the repository maintainer edits/deletes the issue; GitHub may retain history</td>
+        <td>Only submit if you are comfortable with a public report. Do not include personal information or whole documents. Request removal through the issue tracker.</td>
       </tr>
       <tr>
         <td>Data held by Google, search providers, Wikipedia, Yahoo, DuckDuckGo, Hugging Face or GitHub</td>
