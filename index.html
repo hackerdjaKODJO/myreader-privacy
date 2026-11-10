@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>MyReader Privacy Policy</title>
+<meta name="description" content="Privacy policy for the MyReader Android document reader, including optional Google Translate, web references, model downloads, Reading AI and diagnostics.">
+<style>
+  :root {
+    --bg: #fbf8f1;
+    --surface: #ffffff;
+    --text: #24332d;
+    --muted: #5d6b64;
+    --accent: #2e4a3f;
+    --accent-2: #c97941;
+    --line: #e4ddd0;
+    --warn: #7a4a1f;
+    --warn-bg: #fff4e6;
+    --code: #f1ece2;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #17211d;
+      --surface: #1e2b26;
+      --text: #e8eee9;
+      --muted: #aab8b1;
+      --accent: #a9c9b8;
+      --accent-2: #e0a06b;
+      --line: #33443c;
+      --warn: #f0c28d;
+      --warn-bg: #2a241c;
+      --code: #22332c;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", "Noto Sans", sans-serif;
+  }
+  main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 32px 20px 72px;
+  }
+  header {
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 20px;
+    margin-bottom: 28px;
+  }
+  .kicker {
+    color: var(--accent-2);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  h1 {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    line-height: 1.15;
+    margin: 8px 0 10px;
+  }
+  h2 {
+    font-size: 1.35rem;
+    line-height: 1.25;
+    margin: 2.2em 0 0.6em;
+    padding-top: 0.2em;
+  }
+  h3 {
+    font-size: 1.05rem;
+    margin: 1.6em 0 0.4em;
+  }
+  p, li { max-width: 78ch; }
+  a { color: var(--accent); text-underline-offset: 2px; }
+  a:hover { color: var(--accent-2); }
+  .meta {
+    color: var(--muted);
+    font-size: 0.94rem;
+  }
+  .summary {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 5px solid var(--accent-2);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin: 22px 0;
+  }
+  .summary h2 { margin-top: 0; font-size: 1.1rem; }
+  .summary ul { margin: 0.4em 0 0; padding-left: 1.2em; }
+  .summary li { margin: 0.35em 0; }
+  .ko {
+    color: var(--muted);
+    font-size: 0.95rem;
+    border-top: 1px dashed var(--line);
+    margin-top: 14px;
+    padding-top: 12px;
+  }
+  .warn {
+    background: var(--warn-bg);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 14px 16px;
+    color: var(--text);
+    margin: 18px 0;
+  }
+  .warn strong { color: var(--warn); }
+  .toc {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin: 24px 0 8px;
+  }
+  .toc h2 { margin: 0 0 8px; font-size: 1rem; }
+  .toc ol { margin: 0; padding-left: 1.3em; columns: 2; column-gap: 28px; }
+  .toc li { margin: 0.25em 0; break-inside: avoid; }
+  @media (max-width: 620px) { .toc ol { columns: 1; } }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0 22px;
+    font-size: 0.95rem;
+    background: var(--surface);
+  }
+  caption {
+    text-align: left;
+    color: var(--muted);
+    font-size: 0.88rem;
+    padding-bottom: 6px;
+  }
+  th, td {
+    border: 1px solid var(--line);
+    padding: 10px 12px;
+    vertical-align: top;
+    text-align: left;
+  }
+  th { background: var(--code); font-weight: 700; }
+  code {
+    background: var(--code);
+    border-radius: 5px;
+    padding: 0.08em 0.35em;
+    font-size: 0.9em;
+    word-break: break-word;
+  }
+  ul, ol { padding-left: 1.35em; }
+  li { margin: 0.35em 0; }
+  footer {
+    border-top: 1px solid var(--line);
+    margin-top: 40px;
+    padding-top: 18px;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  .small { font-size: 0.9rem; color: var(--muted); }
+  @media print {
+    body { background: #fff; color: #000; }
+    main { max-width: none; padding: 0; }
+    a { color: #000; }
+    .toc, .summary { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<main>
+<header>
+  <div class="kicker">MyReader · Android</div>
+  <h1>Privacy Policy</h1>
+  <p class="meta">
+    <strong>Effective date:</strong> 10 November 2026<br>
+    <strong>Last updated:</strong> 10 November 2026<br>
+    <strong>Applies to:</strong> MyReader for Android, package <code>com.myreader.app</code>
+    (including version 2.11.0)
+  </p>
+</header>
+
+<section class="summary" aria-labelledby="summary-title">
+  <h2 id="summary-title">The short version</h2>
+  <ul>
+    <li>The developer does not receive or store your documents, reading history, notes, questions or account data. There are no accounts, ads, analytics, tracking or crash-reporting SDKs.</li>
+    <li>Documents and reading data are processed and stored on your device. Android cloud backup is disabled, so the system backup service does not upload MyReader’s reading state to Google Drive.</li>
+    <li>Network access is used only for optional, user-initiated features: selected-text translation through Google Translate, web references, and voice/translation/Reading AI model downloads.</li>
+    <li>Spoken-sentence translation is always processed on the device. It does not send sentences to Google Translate.</li>
+    <li>Web references are off by default. When you turn them on, your question (and the book title for book-scoped questions) is sent to public search providers and Wikipedia. Book text, indexed passages, selected passages and notes are not sent.</li>
+    <li>Optional AI and voice packs are large downloads. They are not bundled in the APK and are stored in the app’s private storage until you delete them.</li>
+    <li>The Diagnostics log is local and is never uploaded automatically. You can share it only through Android’s chooser.</li>
+  </ul>
+  <div class="ko" lang="ko">
+    <strong>한국어 요약:</strong> 개발자는 문서·읽기 기록·노트를 수집하거나 보관하지 않습니다.
+    계정·광고·분석·트래킹은 없습니다. 문서와 읽기 데이터는 기기에 저장되며, Android 클라우드 백업은
+    꺼져 있습니다. 네트워크는 선택 기능(Google 번역, 웹 참고, 모델 다운로드)에만 사용됩니다.
+    낭독 문장 번역은 항상 기기에서 처리됩니다. 웹 참고는 기본 꺼짐이며, 켜면 질문과 책 제목만
+    검색 서비스로 전송되고 책 본문·색인·선택 구절·노트는 전송되지 않습니다.
+  </div>
+</section>
+
+<nav class="toc" aria-labelledby="toc-title">
+  <h2 id="toc-title">Contents</h2>
+  <ol>
+    <li><a href="#who-we-are">Who we are</a></li>
+    <li><a href="#on-device">What stays on your device</a></li>
+    <li><a href="#collection">What the developer collects</a></li>
+    <li><a href="#google-translate">Google Translate for selected text</a></li>
+    <li><a href="#web-references">Web references</a></li>
+    <li><a href="#downloads">Voice, translation and Reading AI downloads</a></li>
+    <li><a href="#reading-ai">Reading AI, notes and chat</a></li>
+    <li><a href="#diagnostics">Diagnostics and local logs</a></li>
+    <li><a href="#retention">Retention and deletion</a></li>
+    <li><a href="#permissions">Permissions</a></li>
+    <li><a href="#security">Security</a></li>
+    <li><a href="#children">Children</a></li>
+    <li><a href="#international">International users</a></li>
+    <li><a href="#changes">Changes to this policy</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</nav>
+
+<section id="who-we-are">
+  <h2>1. Who we are</h2>
+  <p>MyReader is an independent Android document reader developed by the MyReader project. This policy explains how the app handles information when you read documents, use read-aloud, use the optional Reading AI, translate text, turn on web references, or download optional model packs.</p>
+  <p>This policy applies to the app itself. It does not apply to websites, search engines, operating-system services or apps you open from MyReader. Those services have their own policies, linked below where relevant.</p>
+</section>
+
+<section id="on-device">
+  <h2>2. What stays on your device</h2>
+  <p>MyReader is designed around local processing. The following data is stored in the app’s private storage and is not sent to the developer:</p>
+  <ul>
+    <li><strong>Documents you open.</strong> PDF, DOCX, PPTX, HWP, HWPX, EPUB and TXT files are opened through the Android system file picker or an explicit <code>ACTION_VIEW</code> share grant. The app does not modify the original file. Temporary conversion files (for example, a text fallback PDF or a generated “book view” EPUB) are written to the app’s private cache.</li>
+    <li><strong>Reading state.</strong> Last page or position, recent-document titles and URIs, bookmarks, highlights, display theme, brightness, keep-screen-on preference, reading speed, voice settings and similar preferences.</li>
+    <li><strong>Reading AI data.</strong> The optional local search index (book text chunks and vectors in a private SQLite database), saved AI notes, generated artifacts and chat memory. These are described in section 7.</li>
+    <li><strong>Optional model packs.</strong> Downloaded voice, translation and Reading AI model files in the app’s private storage.</li>
+    <li><strong>Diagnostics.</strong> A small rotating local log, described in section 8.</li>
+  </ul>
+  <p>Android cloud backup is disabled for MyReader (<code>android:allowBackup="false"</code>). As a result, the Android system backup service does not upload MyReader’s reading state to Google Drive or transfer it to another device. Uninstalling the app removes its private data.</p>
+</section>
+
+<section id="collection">
+  <h2>3. What the developer collects</h2>
+  <p><strong>The developer does not receive or store personal data from MyReader.</strong> There is no account system, no developer server, no advertising SDK, no analytics SDK, no tracking SDK and no crash-reporting SDK. The developer does not sell or rent personal data.</p>
+  <p>MyReader does make some <strong>optional, user-initiated transmissions</strong> directly from your device to third-party services. Those are described in sections 4–6. Under Google Play’s Data safety rules, transmitting data off the device can count as “collection” or “sharing” even when the developer never receives it. This policy describes those transfers plainly rather than claiming that “nothing ever leaves the device.”</p>
+  <p>The developer does not use your documents, notes or questions to train models. When you choose to send content to a third party (for example, selected text to Google Translate or a question to a search provider), that provider handles the content under its own terms and privacy policy.</p>
+</section>
+
+<section id="google-translate">
+  <h2>4. Google Translate for selected text</h2>
+  <p>When you select text in a document and choose <strong>Google Translate</strong>, MyReader translates the selected text.</p>
+  <ul>
+    <li><strong>If the optional TranslateGemma pack is installed:</strong> MyReader first tries to translate on the device. If local translation succeeds, no text is sent to Google.</li>
+    <li><strong>If the pack is absent, or local translation fails:</strong> MyReader opens an in-app WebView containing Google Translate and passes the selected text as the query, together with source/target language parameters. That is a user-initiated transfer of the selected text to Google.</li>
+  </ul>
+  <p>Only the selected text is sent—not the whole document, the file, your reading history, your notes or your other documents. The app does not store the selection or the translation result beyond an in-memory translation cache. Google’s handling of the text inside the WebView is governed by <a href="https://policies.google.com/privacy" rel="noopener">Google’s privacy policy</a> and the applicable Google terms.</p>
+  <p>The Google Translate WebView has JavaScript and local storage enabled. Google may store cookies or local storage in the WebView, subject to its own policy and your WebView settings. You can remove this data by clearing MyReader’s storage in Android Settings or by uninstalling the app.</p>
+  <p>If you do not want this transfer, do not tap Google Translate. You can install the optional TranslateGemma pack to translate selected text locally, or copy the text and use a service you choose.</p>
+</section>
+
+<section id="web-references">
+  <h2>5. Web references (optional, off by default)</h2>
+  <p>Reading AI has an optional <strong>Web references</strong> setting. It is off by default. When you turn it on and ask a question, MyReader may send the following to public search services and Wikipedia:</p>
+  <ul>
+    <li>the text you enter in the question box;</li>
+    <li>for book-scoped questions, the selected book’s title (metadata, up to 120 characters) as additional search context.</li>
+  </ul>
+  <p>MyReader does <strong>not</strong> send book text, indexed passages, selected passages, saved notes, chat history or files as part of a web-reference query. If you paste book text into the question box yourself, that text is sent as part of your question.</p>
+
+  <table>
+    <caption>Web-reference providers and requests</caption>
+    <thead>
+      <tr><th>Provider / request</th><th>What may be sent</th><th>When</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>searx.space/data/instances.json</code></td>
+        <td>A catalogue request; no user content.</td>
+        <td>First time Web references is turned on, to choose a public instance.</td>
+      </tr>
+      <tr>
+        <td>Candidate public SearXNG instances</td>
+        <td>The literal test query <code>myreader</code>; no book text or user question.</td>
+        <td>During automatic instance selection.</td>
+      </tr>
+      <tr>
+        <td>Selected public SearXNG instance</td>
+        <td>Your question, plus the book title for book-scoped questions.</td>
+        <td>Each web-reference search.</td>
+      </tr>
+      <tr>
+        <td>Wikipedia (<code>*.wikipedia.org</code>)</td>
+        <td>Question/book-title search terms.</td>
+        <td>Each web-reference search, usually as a fallback or supplement.</td>
+      </tr>
+      <tr>
+        <td>Yahoo (<code>search.yahoo.com</code>)</td>
+        <td>Question, plus book title for book-scoped questions.</td>
+        <td>Fallback when SearXNG results are insufficient.</td>
+      </tr>
+      <tr>
+        <td>DuckDuckGo HTML and Instant Answer APIs</td>
+        <td>Question, plus book title for book-scoped questions.</td>
+        <td>Fallback when other providers are insufficient.</td>
+      </tr>
+      <tr>
+        <td>Accepted result pages (up to three)</td>
+        <td>Standard HTTPS request metadata such as IP address, user agent and the requested URL. The question is not added to the page URL by MyReader.</td>
+        <td>When the app fetches a result page to extract reference text.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Public SearXNG instances are operated by independent third parties, not by the MyReader developer. Wikipedia, Yahoo and DuckDuckGo are separate services. Their own privacy policies apply to the queries they receive. MyReader filters some results (for example, YouTube links) and applies relevance checks, but it does not control third-party content or retention.</p>
+  <p>Search results and extracted page text are cached in memory for the current app session only. The selected SearXNG base URL is stored in the app’s private preferences. Turning Web references off stops new requests; a request already in flight may finish. The app continues to use only the local index when web references are off.</p>
+</section>
+
+<section id="downloads">
+  <h2>6. Voice, translation and Reading AI downloads</h2>
+  <p>MyReader does not bundle the large optional models in the APK. Each pack is downloaded only after you confirm, over HTTPS, and is stored in the app’s private storage. The download request includes standard HTTPS metadata (such as your IP address, user agent and the requested file) but <strong>does not include document text, notes, questions or reading history</strong>. Model files are checked against pinned SHA-256 values.</p>
+
+  <table>
+    <caption>Optional model packs</caption>
+    <thead>
+      <tr><th>Pack</th><th>Contents / size</th><th>Download host</th><th>License</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Supertonic 3 offline voice</td>
+        <td>31-language voice, about 129 MB base; optional high-quality fp32 vocoder about 101 MB (about 230 MB together).</td>
+        <td>GitHub (<code>k2-fsa/sherpa-onnx</code> releases) and Hugging Face (<code>Supertone/supertonic-3</code>).</td>
+        <td>Model weights: BigScience OpenRAIL-M. Runtime: Apache-2.0/MIT components.</td>
+      </tr>
+      <tr>
+        <td>Chinese Mandarin voice</td>
+        <td>About 60 MB.</td>
+        <td>GitHub (<code>k2-fsa/sherpa-onnx</code> releases).</td>
+        <td>Model card included; dataset CC0; Piper runtime MIT.</td>
+      </tr>
+      <tr>
+        <td>TranslateGemma 4B Q4</td>
+        <td>About 2.5 GB; offline translation for selected text and spoken-sentence translation.</td>
+        <td>Hugging Face (<code>bullerwins/translategemma-4b-it-GGUF</code>).</td>
+        <td><a href="https://ai.google.dev/gemma/terms" rel="noopener">Gemma Terms of Use</a>.</td>
+      </tr>
+      <tr>
+        <td>Reading AI pack</td>
+        <td>Gemma 4 E2B (about 2.6 GB) plus EmbeddingGemma 300M ONNX q4 and tokenizer (about 200 MB); about 2.8 GB total.</td>
+        <td>Hugging Face (<code>litert-community/gemma-4-E2B-it-litert-lm</code> and <code>onnx-community/embeddinggemma-300m-ONNX</code>).</td>
+        <td>Gemma 4 E2B: Apache-2.0. EmbeddingGemma: <a href="https://ai.google.dev/gemma/terms" rel="noopener">Gemma Terms of Use</a>.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>After installation, voice synthesis, translation and Reading AI inference run on the device. Deleting a pack removes its files from private storage; deleting a pack does not delete your documents, bookmarks or highlights. An older translation pack (M2M-100) is no longer offered or used; if a previous installation is present, Voice settings shows a delete-only row.</p>
+  <p>Download hosts and their content-delivery providers may process standard request metadata under their own policies. See <a href="https://huggingface.co/privacy" rel="noopener">Hugging Face’s privacy policy</a> and <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub’s privacy statement</a>.</p>
+</section>
+
+<section id="reading-ai">
+  <h2>7. Reading AI, notes and chat</h2>
+  <p>Reading AI is optional and requires a separate model pack (section 6). When installed, the following happens on the device:</p>
+  <ul>
+    <li>Book text is extracted, chunked and stored in a private SQLite index, together with vectors used for search. Extracted text and vectors stay in the app’s private storage.</li>
+    <li>Questions, answers, summaries, explanations and chat are generated by the local model. No document text, index passage, note or chat message is sent to a developer server.</li>
+    <li>Saved notes may include a selected passage, an AI answer, a book title and a timestamp. Notes are stored locally. If you enable a note’s <strong>AI reference</strong> option, that note can be included as local context for your own AI questions; it is not sent to web search.</li>
+    <li>Book chat and general chat keep a small local conversation memory so the thread survives leaving the screen. Long conversations are compacted locally.</li>
+  </ul>
+  <p><strong>Deleting AI data:</strong> the in-app <strong>AI 데이터 삭제</strong> / <strong>Delete AI data</strong> action deletes the local search index database, saved AI notes, generated AI artifacts and the AI cache. It does <strong>not</strong> delete your bookmarks or highlights, and it does not delete installed model packs. Chat memory is stored separately from the index; use <strong>새 대화</strong> / <strong>New conversation</strong> to clear the current conversation, or clear MyReader’s storage/uninstall to remove all local chat memory.</p>
+  <p><strong>Accuracy:</strong> AI-generated answers can be incomplete, outdated or wrong. They are not professional advice. Check important facts against the original document. The app does not publish your AI output; sharing is only through Android’s share sheet when you choose it.</p>
+  <p><strong>Model licenses:</strong> Gemma 4 E2B is Apache-2.0; EmbeddingGemma and TranslateGemma are under the Gemma Terms of Use; Supertonic 3 is under BigScience OpenRAIL-M. The app’s About → open-source licenses and model-license dialogs contain the notices. Do not describe all models as “open source” without checking the specific license.</p>
+</section>
+
+<section id="diagnostics">
+  <h2>8. Diagnostics and local logs</h2>
+  <p>MyReader writes a small rotating log to its private storage (<code>files/logs/myreader.log</code>). The log is used only to troubleshoot the app. It is designed not to contain document text or page images, but it may contain app version, device model, Android version, file names, page numbers, timing and error details.</p>
+  <p>The Diagnostics viewer is hidden by default. Debug builds show it; release builds can reveal it with a hidden gesture (tapping the version line 20 times). The log is <strong>never uploaded automatically</strong>. If you tap <strong>Share</strong>, Android opens the system chooser and sends the log only to the app you choose. You can clear the log from the same dialog, and uninstalling MyReader removes it.</p>
+  <p>Do not post a diagnostic log publicly if it contains information you consider private. You can clear it before sharing or remove file names from a copy.</p>
+</section>
+
+<section id="retention">
+  <h2>9. Retention and deletion</h2>
+  <table>
+    <caption>How long data stays, and how to remove it</caption>
+    <thead>
+      <tr><th>Data</th><th>Where it lives</th><th>How long</th><th>How to delete</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Source documents</td>
+        <td>Their original location (not copied into MyReader)</td>
+        <td>Until you delete them outside the app</td>
+        <td>Delete the file in the app that owns it. MyReader does not modify or delete originals.</td>
+      </tr>
+      <tr>
+        <td>Recent list, last position, bookmarks, highlights, preferences</td>
+        <td>App-private storage</td>
+        <td>Until you clear storage or uninstall</td>
+        <td>Remove individual recents/bookmarks/highlights in the app; clear all app storage in Android Settings; or uninstall.</td>
+      </tr>
+      <tr>
+        <td>Reading AI index</td>
+        <td>Private SQLite database</td>
+        <td>Until you delete AI data, clear storage or uninstall</td>
+        <td><strong>AI 데이터 삭제</strong> / <strong>Delete AI data</strong>, or clear storage/uninstall.</td>
+      </tr>
+      <tr>
+        <td>Saved AI notes and artifacts</td>
+        <td>Private database</td>
+        <td>Until you delete them, delete AI data, clear storage or uninstall</td>
+        <td>Delete individual notes; the global Delete AI data action also removes notes/artifacts; clear storage/uninstall removes everything.</td>
+      </tr>
+      <tr>
+        <td>Chat memory</td>
+        <td>App-private preferences</td>
+        <td>Until you start a new conversation, clear storage or uninstall</td>
+        <td><strong>새 대화</strong> / <strong>New conversation</strong> clears the current scope; clear storage/uninstall removes all.</td>
+      </tr>
+      <tr>
+        <td>Model packs</td>
+        <td>App-private storage</td>
+        <td>Until you delete the pack, clear storage or uninstall</td>
+        <td>Delete the pack in Voice settings / Reading AI; clear storage/uninstall.</td>
+      </tr>
+      <tr>
+        <td>Diagnostics log</td>
+        <td>App-private storage</td>
+        <td>Rotating; oldest entries are overwritten</td>
+        <td>Clear in Diagnostics; clear storage/uninstall.</td>
+      </tr>
+      <tr>
+        <td>Web-reference cache</td>
+        <td>Memory only</td>
+        <td>Current app session</td>
+        <td>Close the app; turning web references off stops new requests.</td>
+      </tr>
+      <tr>
+        <td>Google Translate WebView cookies/local storage</td>
+        <td>App WebView storage</td>
+        <td>Until cleared</td>
+        <td>Clear MyReader’s storage in Android Settings, or uninstall.</td>
+      </tr>
+      <tr>
+        <td>Data held by Google, search providers, Wikipedia, Yahoo, DuckDuckGo, Hugging Face or GitHub</td>
+        <td>Third-party services</td>
+        <td>Governed by their policies</td>
+        <td>Use the provider’s own privacy controls. The developer cannot delete data held by independent third parties.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Removing a document from the Recent list hides the row but may preserve its bookmarks and highlights so they can be restored if you open the same document again. Removing a recent row does not delete the original file.</p>
+  <p>There is no account and no developer-held data. To remove all local data at once, use Android Settings → Apps → MyReader → Storage → <strong>Clear storage</strong>, or uninstall the app.</p>
+</section>
+
+<section id="permissions">
+  <h2>10. Permissions</h2>
+  <p>MyReader declares the following Android permissions. It does not request broad storage, location, camera, microphone, contacts, SMS, call-log, advertising-ID or billing permissions.</p>
+  <table>
+    <caption>Declared permissions</caption>
+    <thead>
+      <tr><th>Permission</th><th>Why</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>INTERNET</code></td><td>Optional Google Translate WebView, web references, and optional model/pack downloads. Core reading works without network.</td></tr>
+      <tr><td><code>ACCESS_NETWORK_STATE</code></td><td>Detect no-network or metered connections before web references or large downloads; show a mobile-data warning. Not used to determine location.</td></tr>
+      <tr><td><code>FOREGROUND_SERVICE</code></td><td>Host the foreground services used for long downloads, AI indexing, PDF book conversion and background read-aloud.</td></tr>
+      <tr><td><code>FOREGROUND_SERVICE_DATA_SYNC</code></td><td>Voice/translation/Reading AI downloads, local AI index builds and PDF-to-EPUB conversion, with progress notifications.</td></tr>
+      <tr><td><code>FOREGROUND_SERVICE_MEDIA_PLAYBACK</code></td><td>Keep text-to-speech and page turns running when the reader is backgrounded, with an ongoing stop notification.</td></tr>
+      <tr><td><code>POST_NOTIFICATIONS</code></td><td>Show download/index/read-aloud/completion notifications. Optional; denying it does not stop core reading.</td></tr>
+      <tr><td><code>WAKE_LOCK</code></td><td>Keep the CPU awake for background page turns, speech, indexing and downloads. Partial wake lock; does not wake the screen.</td></tr>
+    </tbody>
+  </table>
+  <p>Android package visibility: MyReader declares a <code>queries</code> entry for <code>android.intent.action.TTS_SERVICE</code> so it can find installed text-to-speech engines and voices. This is not a runtime permission.</p>
+  <p>Files are opened through the Storage Access Framework or an explicit <code>ACTION_VIEW</code> grant. MyReader does not request <code>MANAGE_EXTERNAL_STORAGE</code> and does not scan your storage.</p>
+</section>
+
+<section id="security">
+  <h2>11. Security</h2>
+  <p>App-initiated network requests use HTTPS; Android cleartext traffic is disabled (<code>android:usesCleartextTraffic="false"</code>). Model files are verified against pinned SHA-256 values. Documents and app data are stored in the app’s private storage, and only the main activity is exported; other activities, services and content providers are not public.</p>
+  <p>No method of transmission or storage is completely secure. If you believe you have found a security issue, please report it through the contact channel below without posting sensitive document contents publicly.</p>
+</section>
+
+<section id="children">
+  <h2>12. Children</h2>
+  <p>MyReader is a general-purpose document reader and is not directed at children. The developer does not knowingly collect personal information from anyone, including children. If a child uses the app, a parent or guardian should supervise the use of optional AI, translation, web-reference and model-download features.</p>
+</section>
+
+<section id="international">
+  <h2>13. International users</h2>
+  <p>The developer does not operate a server or maintain a user database. When you use an optional feature, the third-party provider you choose may process the request in a country other than yours, under its own privacy policy and applicable law. If you do not want a transfer to a particular provider, do not use that feature or use an on-device alternative where available.</p>
+</section>
+
+<section id="changes">
+  <h2>14. Changes to this policy</h2>
+  <p>This policy may be updated when the app’s features, providers or legal requirements change. The “Last updated” date at the top will change, and material changes will be reflected in the app or store listing where appropriate. Continued use of the app after an update means you accept the updated policy.</p>
+</section>
+
+<section id="contact">
+  <h2>15. Contact</h2>
+  <p>Support and privacy questions:</p>
+  <p><a href="https://github.com/hackerdjaKODJO/myreader-privacy/issues" rel="noopener">https://github.com/hackerdjaKODJO/myreader-privacy/issues</a></p>
+  <p>Please do not include document contents, passwords, personal data or other sensitive information in a public issue. For a security report, describe the issue without attaching private documents.</p>
+</section>
+
+<footer>
+  <p>This page is the privacy policy for the MyReader Android app (package <code>com.myreader.app</code>). Effective 10 November 2026. The English text is the authoritative version; the Korean summary above is provided for convenience.</p>
+  <p class="small">Third-party policy links: <a href="https://policies.google.com/privacy" rel="noopener">Google</a> · <a href="https://foundation.wikimedia.org/wiki/Policy:Privacy_policy" rel="noopener">Wikimedia</a> · <a href="https://duckduckgo.com/privacy" rel="noopener">DuckDuckGo</a> · <a href="https://legal.yahoo.com/us/en/yahoo/privacy/index.html" rel="noopener">Yahoo</a> · <a href="https://huggingface.co/privacy" rel="noopener">Hugging Face</a> · <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub</a> · <a href="https://ai.google.dev/gemma/terms" rel="noopener">Gemma Terms</a></p>
+</footer>
+</main>
+</body>
+</html>
