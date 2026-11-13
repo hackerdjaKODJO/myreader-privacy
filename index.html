@@ -168,8 +168,8 @@
   <div class="kicker">MyReader · Android</div>
   <h1>Privacy Policy</h1>
   <p class="meta">
-    <strong>Effective date:</strong> 10 November 2026<br>
-    <strong>Last updated:</strong> 10 November 2026<br>
+    <strong>Effective date:</strong> 13 November 2026<br>
+    <strong>Last updated:</strong> 13 November 2026<br>
     <strong>Applies to:</strong> MyReader for Android, package <code>com.myreader.app</code>
     (including version 2.11.0)
   </p>
@@ -184,7 +184,7 @@
     <li>Spoken-sentence translation is always processed on the device. It does not send sentences to Google Translate.</li>
     <li>Web references are off by default. When you turn them on, your question (and the book title for book-scoped questions) is sent to public search providers and Wikipedia. Book text, indexed passages, selected passages and notes are not sent.</li>
     <li>Optional AI and voice packs are large downloads. They are not bundled in the APK and are stored in the app’s private storage until you delete them.</li>
-    <li>The Diagnostics log is local and is never uploaded automatically. You can share it only through Android’s chooser.</li>
+    <li>The release app does not write a diagnostics log. Development/QA builds may keep a local log that is never uploaded automatically.</li>
   </ul>
   <div class="ko" lang="ko">
     <strong>한국어 요약:</strong> 개발자는 일반적인 앱 사용에서 문서·읽기 기록·노트를 수집하거나 보관하지 않습니다.
@@ -219,7 +219,8 @@
 
 <section id="who-we-are">
   <h2>1. Who we are</h2>
-  <p>MyReader is an independent Android document reader developed by the MyReader project. This policy explains how the app handles information when you read documents, use read-aloud, use the optional Reading AI, translate text, turn on web references, or download optional model packs.</p>
+  <p>MyReader is an independent Android document reader developed by the MyReader project (an individual developer). This policy explains how the app handles information when you read documents, use read-aloud, use the optional Reading AI, translate text, turn on web references, or download optional model packs.</p>
+  <p>The controller for the processing described here is the MyReader project. A public support email is provided on the Google Play store listing and is the preferred privacy contact. If you cannot use that channel, open an issue at the policy repository without including personal data and ask for a private follow-up channel.</p>
   <p>This policy applies to the app itself. It does not apply to websites, search engines, operating-system services or apps you open from MyReader. Those services have their own policies, linked below where relevant.</p>
 </section>
 
@@ -231,7 +232,7 @@
     <li><strong>Reading state.</strong> Last page or position, recent-document titles and URIs, bookmarks, highlights, display theme, brightness, keep-screen-on preference, reading speed, voice settings and similar preferences.</li>
     <li><strong>Reading AI data.</strong> The optional local search index (book text chunks and vectors in a private SQLite database), saved AI notes, generated artifacts and chat memory. These are described in section 7.</li>
     <li><strong>Optional model packs.</strong> Downloaded voice, translation and Reading AI model files in the app’s private storage.</li>
-    <li><strong>Diagnostics.</strong> A small rotating local log, described in section 8.</li>
+    <li><strong>Diagnostics.</strong> Release builds do not write a log; development/QA logging is described in section 8.</li>
   </ul>
   <p>Android cloud backup is disabled for MyReader (<code>android:allowBackup="false"</code>). As a result, the Android system backup service does not upload MyReader’s reading state to Google Drive or transfer it to another device. Uninstalling the app removes its private data.</p>
 </section>
@@ -371,15 +372,15 @@
   </ul>
   <p><strong>Deleting AI data:</strong> the in-app <strong>AI 데이터 삭제</strong> / <strong>Delete AI data</strong> action deletes the local search index database, saved AI notes, generated AI artifacts, the AI cache and local chat memory. It does <strong>not</strong> delete your bookmarks or highlights, and it does not delete installed model packs.</p>
   <p><strong>Accuracy:</strong> AI-generated answers can be incomplete, outdated or wrong. They are not professional advice. Check important facts against the original document. The app does not publish your AI output automatically; you can share it through Android’s share sheet or submit a public AI answer report when you choose.</p>
-  <p><strong>Sharing and AI reports:</strong> when you share a document, note or diagnostic log, Android opens the system chooser and sends the item only to the app you choose. If you tap <strong>Report / 신고</strong> on an AI answer, the app opens its public GitHub issue form inside an in-app WebView and sends the question, answer, optional comment, app version and Android version so the developer can review it. Reports are public; do not include personal information or whole documents. MyReader does not operate a separate sharing server.</p>
+  <p><strong>Sharing and AI reports:</strong> when you share a document, note or diagnostic log, Android opens the system chooser and sends the item only to the app you choose. If you tap <strong>Report / 신고</strong> on an AI answer or an AI-generated artifact, the app opens its public GitHub issue form inside an in-app WebView and sends the question, answer, optional comment, app version and Android version so the developer can review it. The app requires an explicit “I understand this report will be public” confirmation before the report button is enabled. Reports are public; do not include personal information or whole documents. MyReader does not operate a separate sharing server.</p>
   <p><strong>Model licenses:</strong> Gemma 4 E2B is Apache-2.0; EmbeddingGemma and TranslateGemma are under the Gemma Terms of Use; Supertonic 3 is under BigScience OpenRAIL-M. The app’s About → open-source licenses and model-license dialogs contain the notices. Do not describe all models as “open source” without checking the specific license.</p>
 </section>
 
 <section id="diagnostics">
   <h2>8. Diagnostics and local logs</h2>
-  <p>MyReader writes a small rotating log to its private storage (<code>files/logs/myreader.log</code>). The log is used only to troubleshoot the app. It is designed not to contain document text or page images, but it may contain app version, device model, Android version, file names, page numbers, timing and error details.</p>
-  <p>The Diagnostics viewer is hidden by default. Debug builds show it; release builds can reveal it with a hidden gesture (tapping the version line 20 times). The log is <strong>never uploaded automatically</strong>. If you tap <strong>Share</strong>, Android opens the system chooser and sends the log only to the app you choose. You can clear the log from the same dialog, and uninstalling MyReader removes it.</p>
-  <p>Do not post a diagnostic log publicly if it contains information you consider private. You can clear it before sharing or remove file names from a copy.</p>
+  <p><strong>The release app does not create or write a diagnostic log.</strong> There is no Diagnostics button in the release app, and WebView remote debugging and page-console logging are disabled.</p>
+  <p>Only development/QA builds may keep a small rotating local log for troubleshooting. That log is <strong>never uploaded automatically</strong>. If a QA tester taps <strong>Share</strong>, Android opens the system chooser and sends the log only to the app they choose. It can be cleared from the same dialog, and uninstalling MyReader removes it.</p>
+  <p>Do not post a diagnostic log publicly if it contains information you consider private.</p>
 </section>
 
 <section id="retention">
@@ -427,8 +428,8 @@
         <td>Delete the pack in Voice settings / Reading AI; clear storage/uninstall.</td>
       </tr>
       <tr>
-        <td>Diagnostics log</td>
-        <td>App-private storage</td>
+        <td>QA diagnostics log (not in release)</td>
+        <td>App-private storage, development/QA builds only</td>
         <td>Rotating; oldest entries are overwritten</td>
         <td>Clear in Diagnostics; clear storage/uninstall.</td>
       </tr>
@@ -498,6 +499,24 @@
 <section id="international">
   <h2>13. International users</h2>
   <p>The developer does not operate a server or maintain a user database. When you use an optional feature, the third-party provider you choose may process the request in a country other than yours, under its own privacy policy and applicable law. If you do not want a transfer to a particular provider, do not use that feature or use an on-device alternative where available.</p>
+
+  <h3>Legal bases (EEA and UK)</h3>
+  <p>Where the GDPR or UK GDPR applies, the developer relies on: (a) <strong>consent</strong> for optional transfers you explicitly start, including Google Translate, web references, public AI reports and optional model-pack downloads; (b) <strong>legitimate interests</strong> in keeping the app secure, preventing abuse and responding to support requests; and (c) <strong>legal obligations</strong> where applicable. You may withdraw consent at any time by disabling the feature or not submitting the report; withdrawal does not affect processing that already occurred.</p>
+
+  <h3>Your privacy rights</h3>
+  <p>Depending on your location, you may have the right to request access to, correction of, deletion of, restriction of, or a copy of personal data; to object to processing; to withdraw consent; and to lodge a complaint with your local supervisory authority. MyReader has no account or developer-held user database, so most reading data can be deleted directly on the device with <strong>Clear storage</strong> or by uninstalling. For a public AI report, edit or delete the GitHub issue or request removal through the issue tracker. To exercise a privacy right, use the support email on the Google Play listing and describe the request without including document contents or other sensitive data.</p>
+
+  <h3>United States (California and similar states)</h3>
+  <p>The developer does not sell personal information and does not share it for cross-context behavioral advertising. MyReader has no advertising or analytics SDK. California residents may request to know, delete, or correct personal information, and may exercise those rights without discrimination. Because the app has no account, requests concerning on-device reading data can usually be completed by clearing app storage or uninstalling; public AI reports can be edited or deleted on GitHub.</p>
+
+  <h3>Korea</h3>
+  <p>Under the Personal Information Protection Act (PIPA), you may request access to, correction of, deletion of, or suspension of processing of your personal information. Reading data stays on the device and can be deleted with <strong>Clear storage</strong> or by uninstalling. Optional web references, Google Translate, model downloads and public AI reports involve user-initiated transfers to the listed third parties; do not use those features if you do not want the transfer. Privacy inquiries may be sent to the support email on the Google Play listing; the developer will designate a privacy contact for the listing before release.</p>
+
+  <h3>Japan</h3>
+  <p>Under the Act on the Protection of Personal Information (APPI), you may request disclosure, correction, suspension of use, or deletion of retained personal data, and may contact the developer with complaints. Use the support email on the Google Play listing. Optional transfers to third-party providers occur only when you start the relevant feature.</p>
+
+  <h3>AI-generated content</h3>
+  <p>Reading AI output can be inaccurate. The app provides an in-app report/flag path for AI answers and generated artifacts, and requires confirmation that the report is public before submission. Do not submit personal information, confidential documents or sensitive data in a report.</p>
 </section>
 
 <section id="changes">
@@ -507,13 +526,13 @@
 
 <section id="contact">
   <h2>15. Contact</h2>
-  <p>Support and privacy questions:</p>
+  <p>Support and privacy questions: use the public support email shown on the Google Play store listing. You can also open an issue without sensitive information at:</p>
   <p><a href="https://github.com/hackerdjaKODJO/myreader-privacy/issues" rel="noopener">https://github.com/hackerdjaKODJO/myreader-privacy/issues</a></p>
   <p>Please do not include document contents, passwords, personal data or other sensitive information in a public issue. For a security report, describe the issue without attaching private documents.</p>
 </section>
 
 <footer>
-  <p>This page is the privacy policy for the MyReader Android app (package <code>com.myreader.app</code>). Effective 10 November 2026. The English text is the authoritative version; the Korean summary above is provided for convenience.</p>
+  <p>This page is the privacy policy for the MyReader Android app (package <code>com.myreader.app</code>). Effective 13 November 2026. The English text is the authoritative version; the Korean summary above is provided for convenience.</p>
   <p class="small">Third-party policy links: <a href="https://policies.google.com/privacy" rel="noopener">Google</a> · <a href="https://foundation.wikimedia.org/wiki/Policy:Privacy_policy" rel="noopener">Wikimedia</a> · <a href="https://duckduckgo.com/privacy" rel="noopener">DuckDuckGo</a> · <a href="https://legal.yahoo.com/us/en/yahoo/privacy/index.html" rel="noopener">Yahoo</a> · <a href="https://huggingface.co/privacy" rel="noopener">Hugging Face</a> · <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub</a> · <a href="https://ai.google.dev/gemma/terms" rel="noopener">Gemma Terms</a></p>
 </footer>
 </main>
