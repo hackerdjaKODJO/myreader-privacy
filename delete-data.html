@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Delete your MyReader data</title>
+<meta name="description" content="How to delete MyReader reading data, AI data, model packs and public AI reports, and what data is kept.">
+<style>
+  :root {
+    --bg: #fbf8f1;
+    --surface: #ffffff;
+    --text: #24332d;
+    --muted: #5d6b64;
+    --accent: #2e4a3f;
+    --accent-2: #b8642c;
+    --line: #e4ddd0;
+    --warn: #7a4a1f;
+    --warn-bg: #fff4e6;
+    --code: #f1ece2;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #17211d;
+      --surface: #1e2b26;
+      --text: #e8eee9;
+      --muted: #aab8b1;
+      --accent: #a9c9b8;
+      --accent-2: #e0a06b;
+      --line: #33443c;
+      --warn: #f0c28d;
+      --warn-bg: #2a241c;
+      --code: #22332c;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", sans-serif;
+  }
+  main { max-width: 920px; margin: 0 auto; padding: 32px 20px 64px; }
+  header { padding: 18px 0 26px; border-bottom: 1px solid var(--line); }
+  .kicker { color: var(--accent-2); font-size: 13px; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }
+  h1 { font-size: clamp(2rem, 7vw, 3.3rem); line-height: 1.08; letter-spacing: -.03em; margin: 8px 0 12px; }
+  h2 { font-size: 1.42rem; line-height: 1.25; margin: 34px 0 10px; letter-spacing: -.01em; }
+  h3 { font-size: 1.05rem; margin: 22px 0 6px; }
+  p, li { color: var(--text); }
+  .lead { color: var(--muted); font-size: 1.08rem; max-width: 760px; }
+  .meta { color: var(--muted); font-size: .92rem; }
+  .meta strong { color: var(--text); }
+  .actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0 8px; }
+  .button {
+    display: inline-block; padding: 10px 16px; border-radius: 999px;
+    background: var(--accent); color: var(--bg); text-decoration: none;
+    font-weight: 700; font-size: .95rem;
+  }
+  .button.secondary { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+  .callout {
+    background: var(--warn-bg); border: 1px solid var(--line);
+    border-left: 4px solid var(--accent-2); border-radius: 10px;
+    padding: 16px 18px; margin: 22px 0;
+  }
+  .callout p:first-child { margin-top: 0; }
+  .callout p:last-child { margin-bottom: 0; }
+  .card {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 12px; padding: 18px 20px; margin: 18px 0;
+  }
+  .steps { counter-reset: step; list-style: none; padding: 0; margin: 12px 0; }
+  .steps > li { counter-increment: step; position: relative; padding: 8px 0 8px 44px; }
+  .steps > li::before {
+    content: counter(step); position: absolute; left: 0; top: 8px;
+    width: 30px; height: 30px; border-radius: 50%;
+    background: var(--accent); color: var(--bg);
+    display: grid; place-items: center; font-weight: 800; font-size: .9rem;
+  }
+  code {
+    background: var(--code); border: 1px solid var(--line); border-radius: 5px;
+    padding: 1px 5px; font-size: .92em; overflow-wrap: anywhere;
+  }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0 18px; background: var(--surface); font-size: .93rem; }
+  caption { text-align: left; color: var(--muted); font-size: .9rem; padding-bottom: 8px; }
+  th, td { border: 1px solid var(--line); padding: 9px 10px; vertical-align: top; text-align: left; }
+  th { background: var(--code); font-weight: 750; }
+  a { color: var(--accent); text-underline-offset: 2px; }
+  .small { color: var(--muted); font-size: .88rem; }
+  .ko {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+    padding: 14px 18px; margin: 20px 0; font-size: .95rem;
+  }
+  footer { border-top: 1px solid var(--line); margin-top: 40px; padding-top: 18px; color: var(--muted); font-size: .9rem; }
+  @media (max-width: 620px) {
+    main { padding: 22px 14px 48px; }
+    table, thead, tbody, tr, th, td { display: block; }
+    thead { display: none; }
+    tr { border: 1px solid var(--line); margin-bottom: 10px; background: var(--surface); }
+    td { border: 0; border-bottom: 1px solid var(--line); }
+    td:last-child { border-bottom: 0; }
+    td::before { content: attr(data-label); display: block; color: var(--muted); font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 2px; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <div class="kicker">MyReader · Android</div>
+  <h1>Delete your MyReader data</h1>
+  <p class="lead">MyReader has no accounts and no developer server. You can delete reading data directly on your device. This page explains exactly what is deleted, what is kept, and how to ask for deletion of a public AI report.</p>
+  <p class="meta">
+    <strong>App:</strong> MyReader (package <code>com.myreader.reader</code>)<br>
+    <strong>Developer:</strong> MyReader project (individual developer)<br>
+    <strong>Last updated:</strong> 14 November 2026
+  </p>
+  <div class="actions">
+    <a class="button" href="#on-device">Delete on this device</a>
+    <a class="button secondary" href="mailto:jjwwww76@gmail.com?subject=MyReader%20data%20deletion%20request">Email a deletion request</a>
+  </div>
+</header>
+
+<div class="callout">
+  <p><strong>Fastest method:</strong> open Android <strong>Settings → Apps → MyReader → Storage &amp; cache → Clear storage</strong>, or uninstall MyReader. This immediately deletes the app’s private data on that device. You do not need to create an account or email the developer.</p>
+</div>
+
+<h2 id="on-device">1. Delete all MyReader data on your device</h2>
+<ol class="steps">
+  <li>Open Android <strong>Settings</strong>.</li>
+  <li>Open <strong>Apps</strong> (or <strong>Apps &amp; notifications</strong>) and choose <strong>MyReader</strong>.</li>
+  <li>Open <strong>Storage &amp; cache</strong>.</li>
+  <li>Tap <strong>Clear storage</strong> (some devices call this <strong>Clear data</strong>).</li>
+</ol>
+<p>Alternatively, uninstall MyReader. Uninstalling removes the app’s private data. If you want to keep the app, clearing storage is enough.</p>
+
+<div class="card">
+  <h3>What “Clear storage” deletes</h3>
+  <ul>
+    <li>The recent-document list and last reading positions</li>
+    <li>Bookmarks, highlights and reading preferences</li>
+    <li>Saved AI notes, generated AI artifacts and Reading AI chat memory</li>
+    <li>The on-device Reading AI search index (book chunks and vectors)</li>
+    <li>Generated “book view” files and private cache files</li>
+    <li>Downloaded voice, translation and Reading AI model packs</li>
+    <li>WebView storage created by the in-app Google Translate view</li>
+    <li>Development/QA diagnostics logs, if a development build created any</li>
+  </ul>
+</div>
+
+<div class="callout">
+  <p><strong>Original documents are not deleted.</strong> MyReader opens your PDF, Office, EPUB, comic and text files through Android’s file picker and does not own or modify the originals. To delete an original file, delete it in the app or file manager where it is stored.</p>
+</div>
+
+<h2 id="ai-data">2. Delete only Reading AI data</h2>
+<p>If you want to keep your library, bookmarks and highlights but remove the local AI index and AI-generated data, use the in-app deletion action:</p>
+<ol class="steps">
+  <li>Open <strong>MyReader</strong>.</li>
+  <li>Open <strong>Reading AI</strong>.</li>
+  <li>Open the <strong>Sources</strong> tab and find the <strong>AI data</strong> card.</li>
+  <li>Tap <strong>Delete AI data</strong> and confirm.</li>
+</ol>
+<p>This deletes the on-device search index, saved AI notes, generated AI artifacts, the AI cache and local chat memory. It does <strong>not</strong> delete bookmarks, highlights, original documents or installed model packs. To remove a model pack, use its delete action in Voice settings or Reading AI, or clear all app storage.</p>
+
+<h2 id="reports">3. Delete a public AI answer report</h2>
+<p>If you used the in-app report/flag action, the report was posted as a <strong>public GitHub issue</strong> only after you confirmed and submitted it.</p>
+<ul>
+  <li>Open the GitHub issue you created and edit or delete it while signed in to the same GitHub account.</li>
+  <li>If you cannot edit it, open a request in the issue tracker or email the support address below with the issue URL. Do not include document contents or other sensitive information.</li>
+  <li>GitHub may retain issue history under its own policies even after an edit or deletion.</li>
+</ul>
+<p>Issue tracker: <a href="https://github.com/hackerdjaKODJO/myreader-privacy/issues" rel="noopener">github.com/hackerdjaKODJO/myreader-privacy/issues</a></p>
+
+<h2 id="request">4. Request deletion by email</h2>
+<p>You can also email <a href="mailto:jjwwww76@gmail.com?subject=MyReader%20data%20deletion%20request">jjwwww76@gmail.com</a> with the subject <strong>“MyReader data deletion request”</strong>.</p>
+<ul>
+  <li>MyReader has no account or developer-held user database, so there is usually no server-side reading record to delete.</li>
+  <li>If your request concerns a public AI report, include its GitHub issue URL.</li>
+  <li>Do not send documents, passwords, identity documents or other sensitive data.</li>
+  <li>We aim to respond within 30 days. We may ask for enough information to locate a public report, but we will not ask for your document contents.</li>
+</ul>
+
+<h2 id="kept">5. What is deleted, kept or retained</h2>
+<table>
+  <caption>Data categories and deletion behavior</caption>
+  <thead>
+    <tr><th>Data</th><th>Where it lives</th><th>What happens</th><th>Retention</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="Data">Recent list, reading position, bookmarks, highlights, preferences</td>
+      <td data-label="Where">App-private storage on your device</td>
+      <td data-label="What happens">Deleted by Clear storage or uninstall; individual items can be removed in the app</td>
+      <td data-label="Retention">Until you delete them</td>
+    </tr>
+    <tr>
+      <td data-label="Data">Reading AI index, AI notes, artifacts, chat memory</td>
+      <td data-label="Where">App-private database and preferences</td>
+      <td data-label="What happens">Deleted by <strong>Delete AI data</strong>, Clear storage or uninstall</td>
+      <td data-label="Retention">Until you delete them</td>
+    </tr>
+    <tr>
+      <td data-label="Data">Voice, translation and Reading AI model packs</td>
+      <td data-label="Where">App-private storage</td>
+      <td data-label="What happens">Deleted by the pack’s delete action, Clear storage or uninstall</td>
+      <td data-label="Retention">Until you delete them</td>
+    </tr>
+    <tr>
+      <td data-label="Data">Original PDF, Office, EPUB, comic and text files</td>
+      <td data-label="Where">Their original location; MyReader does not copy or own them</td>
+      <td data-label="What happens">Not deleted by MyReader; delete them in the app or file manager that owns them</td>
+      <td data-label="Retention">Controlled by you and the original file’s storage provider</td>
+    </tr>
+    <tr>
+      <td data-label="Data">Public AI answer report</td>
+      <td data-label="Where">Public GitHub issue</td>
+      <td data-label="What happens">Edit/delete the issue or request removal through the issue tracker</td>
+      <td data-label="Retention">Until you or the maintainer deletes it; GitHub may retain history</td>
+    </tr>
+    <tr>
+      <td data-label="Data">Data held by Google Translate, search providers, Wikipedia, Yahoo, DuckDuckGo, Hugging Face or GitHub</td>
+      <td data-label="Where">Independent third-party services</td>
+      <td data-label="What happens">Use the provider’s own privacy controls; the developer cannot delete data held by an independent provider</td>
+      <td data-label="Retention">Governed by the provider’s policy</td>
+    </tr>
+    <tr>
+      <td data-label="Data">Developer account or cloud reading database</td>
+      <td data-label="Where">None</td>
+      <td data-label="What happens">No account system and no developer-held reading database exist</td>
+      <td data-label="Retention">Not applicable</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="third-parties">6. Data sent to optional third-party features</h2>
+<p>MyReader does not sell data and has no advertising, analytics or crash-reporting SDK. The following transfers happen only when you choose the relevant feature:</p>
+<ul>
+  <li><strong>Google Translate:</strong> selected text and language parameters, when you tap Translate and on-device translation is unavailable or not installed.</li>
+  <li><strong>Web references:</strong> your question and, for book-scoped questions, the book title, when you turn web references on. Book text, indexed passages and notes are not sent.</li>
+  <li><strong>Public AI report:</strong> a question/answer excerpt, optional comment, app version and Android version, when you submit the prefilled public GitHub issue.</li>
+  <li><strong>Model downloads:</strong> a request for the model file and standard HTTPS metadata. No document or user content is sent.</li>
+</ul>
+<p>The full privacy policy explains these features, their recipients and their retention rules: <a href="index.html">MyReader Privacy Policy</a>.</p>
+
+<div class="ko" lang="ko">
+  <strong>한국어 요약:</strong> MyReader에는 계정과 개발자 서버가 없습니다. Android 설정 → 앱 → MyReader → 저장공간 → <strong>저장공간 삭제</strong>를 누르거나 앱을 삭제하면 기기 내 읽기 기록·북마크·AI 색인·AI 노트·대화 기억·모델 팩이 삭제됩니다. 원본 문서는 MyReader가 소유하지 않으므로 별도로 삭제해야 합니다. AI 데이터만 지우려면 Reading AI → Sources → <strong>AI 데이터 삭제</strong>를 사용하세요. 공개 GitHub에 제출한 AI 신고는 해당 이슈를 수정·삭제하거나 이슈 트래커 또는 <a href="mailto:jjwwww76@gmail.com">jjwwww76@gmail.com</a>으로 삭제를 요청할 수 있습니다. 제3자 서비스가 보관하는 데이터는 해당 서비스의 개인정보 보호 기능을 이용해야 합니다.
+</div>
+
+<footer>
+  <p>This page provides the data deletion instructions referenced by the Google Play Data safety form for <strong>MyReader</strong> (package <code>com.myreader.reader</code>). It should be read together with the <a href="index.html">MyReader Privacy Policy</a>.</p>
+  <p class="small">Support and privacy contact: <a href="mailto:jjwwww76@gmail.com">jjwwww76@gmail.com</a></p>
+</footer>
+
+</main>
+</body>
+</html>
